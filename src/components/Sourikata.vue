@@ -1,0 +1,9 @@
+<template>
+  <div>
+    <RestaurantMenu :restaurantName="'Sourikata'" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import RestaurantMenu from '@/components/RestaurantMenu.vue'
+</script>
