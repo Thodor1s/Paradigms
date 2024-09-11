@@ -1,20 +1,58 @@
 <template>
   <div>
-    <div v-for="section in menuData?.pages[0]?.sections" :key="section.name">
-      <h2>{{ section.name }}</h2>
+    <div v-for="section in menuData?.pages[0]?.sections" :key="section.name" class="section">
+      <h2 class="section-title">{{ section.name }}</h2>
+      <!-- Updated title class -->
       <div v-for="(item, index) in section.items" :key="`${section.name}-${index}`">
+        <!-- All item types will remain the same here -->
         <template v-if="item.type === 'Logo'">
-          <img :src="`/src/assets/${item.logo}.png`" :alt="item.logo" />
+          <div class="logo-container">
+            <img :src="`/assets/${item.logo}.png`" :alt="item.logo" class="logo-image" />
+          </div>
         </template>
         <template v-else-if="item.type === 'Item'">
           <div class="menu-item">
-            <h3>{{ item.name }} - €{{ item.price }}</h3>
+            <h3 class="item-header">
+              <span>{{ item.name }}</span>
+              <span class="price" v-if="item.price">€{{ item.price.toFixed(2) }}</span>
+            </h3>
             <p>{{ item.description }}</p>
           </div>
         </template>
         <template v-else-if="item.type === 'Disclaimer'">
           <div class="disclaimer">
             <p>{{ item.name }}</p>
+          </div>
+        </template>
+        <template v-else-if="item.type === 'Title'">
+          <div class="menu-title">
+            <h4>{{ item.name }}</h4>
+          </div>
+        </template>
+        <template v-else-if="item.type === 'Titbit'">
+          <div class="menu-titbit">
+            <h4>{{ item.name }}</h4>
+            <p>{{ item.description }}</p>
+          </div>
+        </template>
+        <template v-else-if="item.type === 'MultiPrice'">
+          <div class="menu-multi-price">
+            <div class="multi-price-header">
+              <h3>{{ item.name }}</h3>
+              <h3 class="multi-price-list">
+                <span v-for="(price, i) in item.prices" :key="i" class="multi-price-price">
+                  <span v-if="price.quantity">{{ price.quantity }}</span>
+                  <span v-if="price.price"> - €{{ price.price.toFixed(2) }}</span>
+                </span>
+              </h3>
+            </div>
+            <p>{{ item.description }}</p>
+          </div>
+        </template>
+        <template v-else-if="item.type === 'Footer'">
+          <div class="menu-footer">
+            <h5>{{ item.name }}</h5>
+            <p>{{ item.description }}</p>
           </div>
         </template>
       </div>
@@ -35,6 +73,15 @@ interface Menu {
         | { type: 'Logo'; logo: string }
         | { type: 'Item'; name: string; description?: string; price?: number }
         | { type: 'Disclaimer'; name: string }
+        | { type: 'Title'; name: string }
+        | { type: 'Titbit'; name: string; description?: string }
+        | {
+            type: 'MultiPrice'
+            name: string
+            description?: string
+            prices: { quantity?: string; price?: number }[] //Up to 3
+          }
+        | { type: 'Footer'; name: string; description?: string }
       )[]
     }[]
   }[]
@@ -67,8 +114,116 @@ onMounted(async () => {
   margin: 10px 0;
 }
 
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  margin-left: 10px; /* Optional: Adds space between the item name and price */
+  white-space: nowrap; /* Prevents the price from wrapping */
+}
+
 .disclaimer {
   color: grey;
   font-style: italic;
+}
+
+.menu-title h4 {
+  color: #2f616c;
+  margin-top: 10px;
+}
+
+.menu-titbit {
+  padding: 10px;
+  background: #2f616c;
+  color: white;
+}
+
+.multi-price-header {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.multi-price-list {
+  display: flex;
+  gap: 10px;
+}
+
+.multi-price-price {
+  text-align: left;
+  width: 120px;
+  white-space: nowrap;
+}
+
+@media (max-width: 650px) {
+  .multi-price-header {
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .multi-price-list {
+    flex-direction: column; /* Stack the prices vertically */
+    gap: 5px; /* Optional: Reduce the gap between items */
+  }
+
+  .multi-price-price {
+    width: auto; /* Remove the fixed width for smaller screens */
+    text-align: left; /* Align text to the left in smaller viewports */
+  }
+}
+
+.multi-price-list span {
+  white-space: nowrap;
+}
+
+.menu-footer h5 {
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.section {
+  margin: 10px;
+  border: 10px solid #2f616c; /* 10px border */
+  margin-bottom: 20px; /* 20px space between sections */
+  padding: 10px; /* 10px padding inside the section */
+  position: relative;
+}
+
+.section-title {
+  font-weight: 500;
+  position: absolute;
+  top: -20px; /* Position the title above the top border */
+  left: 10px;
+  background-color: white; /* Optional: Add a background to the title for better visibility */
+  padding: 0 5px; /* Add some padding around the title */
+  font-size: 24px;
+  color: #2f616c;
+}
+
+h2 {
+  margin: 0; /* Ensure there is no margin on the title */
+}
+
+.menu-item,
+.menu-titbit,
+.menu-footer,
+.menu-multi-price {
+  margin: 10px 0; /* Space between the menu items */
+}
+.logo-container {
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically (if needed) */
+  padding: 10px;
+}
+
+.logo-image {
+  max-width: 256px;
+  max-height: 256px;
+  width: auto; /* Maintains aspect ratio */
+  height: auto; /* Maintains aspect ratio */
 }
 </style>

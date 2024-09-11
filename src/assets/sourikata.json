@@ -80,6 +80,654 @@
               "price": 3.5
             }
           ]
+        },
+        {
+          "name": "ΚΑΦΕΣ ΣΟΚΟΛΑΤΑ",
+          "items": [
+            {
+              "name": "Ελληνικός Μονός",
+              "type": "Item",
+              "price": 2.0
+            },
+            {
+              "name": "Ελληνικός Διπλός",
+              "type": "Item",
+              "price": 2.5
+            },
+            {
+              "name": "Espresso Μονός",
+              "type": "Item",
+              "price": 2.0
+            },
+            {
+              "name": "Espresso Διπλός",
+              "type": "Item",
+              "price": 2.8
+            },
+            {
+              "name": "Espresso Μακιάτο Διπλός",
+              "type": "Item",
+              "price": 2.5
+            },
+            {
+              "name": "Freddo Espresso",
+              "type": "Item",
+              "price": 3.0
+            },
+            {
+              "name": "Espresso Americano",
+              "type": "Item",
+              "price": 3.0
+            },
+            {
+              "name": "Capuccino Μονός",
+              "type": "Item",
+              "price": 3.0
+            },
+            {
+              "name": "Capuccino Διπλός",
+              "type": "Item",
+              "price": 3.2
+            },
+            {
+              "name": "Freddo Capuccino",
+              "type": "Item",
+              "price": 3.2
+            },
+            {
+              "name": "Νες /Φραπές",
+              "type": "Item",
+              "price": 3.0
+            },
+            {
+              "name": "Φίλτρου",
+              "type": "Item",
+              "price": 3.0
+            },
+            {
+              "name": "*DECAF για Espresso και Capuccino",
+              "type": "Disclaimer"
+            },
+            {
+              "name": "Σοκολάτα (Ζεστή / Κρύα)",
+              "description": "Γάλακτος, Φουντούκι, Φράουλα, Καραμέλα",
+              "type": "Item",
+              "price": 3.5
+            }
+          ]
+        },
+        {
+          "name": "KATI ΝΑ ΠΙΩ",
+          "items": [
+            {
+              "name": "ΟΛΑ ΤΑ ΤΣΑΓΙΑ ΖΕΣΤΑ Ή ΚΡΥΑ",
+              "type": "Item",
+              "price": 3.0
+            },
+            {
+              "name": "Πράσσινο Τσάι",
+              "type": "Title"
+            },
+            {
+              "name": "Sencha Organic Bio",
+              "description": "πράσσινο τσάι βιολογικής καλιέργειας",
+              "type": "Item"
+            },
+            {
+              "name": "Sencha Aνανάς - Gigner",
+              "description": "πράσσινο τσάι με ανανά, τζίντζερ, λέμονόχορτο, μέντα και πιπεριά",
+              "type": "Item"
+            },
+            {
+              "name": "Morocco Mint",
+              "description": "πράσσινο τσάι με μέντα",
+              "type": "Item"
+            },
+            {
+              "name": "Massala Oriental",
+              "description": "πράσσινο τσάι με μέντα",
+              "type": "Item"
+            },
+            {
+              "name": "ΉΞΕΡΕΣ ΟΤΙ?",
+              "description": "Κάποια απο τα οφέλη του ματσα για τον οργανισμό είναι η χαλάρωση, η μείωση των επιπέδων χοληστερόλης και σακχάρου, αλλά και η πρόληψη ασθενιών. Επίσης, το τσάι μάτσα είναι ο σύμμαχός σας στο αδυνάτισμα",
+              "type": "Titbit"
+            },
+            {
+              "name": "Μαύρο Τσάι",
+              "type": "Title"
+            },
+            {
+              "name": "English Breakfast Magic Moon",
+              "description": "μαύρο τσάι με πορτοκάλι, κανέλα, και σταγόνες μαρέσκας",
+              "type": "Item"
+            },
+            {
+              "name": "ΉΞΕΡΕΣ ΟΤΙ?",
+              "description": "Το μαύρο τσάι περιέχει περισσότερη καφεΐνη σε σχέση με άλλα είδη τσαγιού και περιέχει αντιοξειδωτικές ουσίες. Βελτιώνει επίσης την υγεία της καρδιάς, μειώνει την κακή LDL χοληστερόλη, βλειτώνει την υγεία του εντέρου, ρίχνει την αρτηριακή πίεση, μειώνει τον κίνδυνο εγκεφαλικού και έχει αντικαρκινική δράση",
+              "type": "Titbit"
+            },
+            {
+              "name": "Κόκκινο Τσάι",
+              "type": "Title"
+            },
+            {
+              "name": "Rooibos Πορτοκάλι Κανέλα",
+              "description": "roiboss τσάι με πορτοκάλι, κασσία, αμύγδαλο, βανίλια και κεράσι",
+              "type": "Item"
+            },
+            {
+              "name": "Rooibos Μάνγκο - Παπάγια",
+              "description": "μαύρο τσάι με μανγκο, παπάγια, ανανά, βατόμουρο, σταφίδες και ροδοπέταλα",
+              "type": "Item"
+            },
+            {
+              "name": "ΉΞΕΡΕΣ ΟΤΙ?",
+              "description": "Το κόκκινο τσάι, γνωστό και ως Roiboss Tea ή Pu-Erh, προέρχεται από έναν θάμνο που καλλιεργείται στην περιοχή του Cape Town στην Νότια Αφρική. Είναι ιδιαίτερα γνωστό για τον μοναδικό συνδιασμό δραστικών συστατικών με πολλά οφέλη για την υγεία όπως αδυνάτισμα, πεπτικό σύστημα, αντιξειδωτική προστασία, ανοσοποιητικό σύστημα και αλλεργίες, άπνυες και νευτικό σύστημα.",
+              "type": "Titbit"
+            },
+            {
+              "name": "Αφεψήματα",
+              "type": "Title"
+            },
+            {
+              "name": "Χαμομήλι Χαμό-μηλο Herbal Infusion",
+              "description": "συνδιασμός χαμομηλιού με μήλο και κανέλα",
+              "type": "Item"
+            },
+            {
+              "name": "Τσάι του βουνού Mediterraneo Organic",
+              "description": "τσάι του βουνού, πορτοκάλι, λεμονόχορτο, φύλλα τσουκνίδας, άνθη λάιμ, και χαμομηλιού, καλεντούλα",
+              "type": "Item"
+            },
+            {
+              "name": "ΉΞΕΡΕΣ ΟΤΙ?",
+              "description": "Τα αεφεψήματα είναι τα προϊόντα του βρασμού μέσα σε νερό διαφόρων φαρμακευτικών ή αρωματικών ουσιών.",
+              "type": "Titbit"
+            }
+          ]
+        },
+        {
+          "name": "ΜΠΥΡΕΣ",
+          "items": [
+            {
+              "name": "Άλφα βαρέλι 400ml",
+              "type": "Item",
+              "price": 4.5
+            },
+            {
+              "name": "Άλφα βαρέλι κανάτα 1500ml",
+              "type": "Item",
+              "price": 14.0
+            },
+            {
+              "name": "Αλφα Weiss 500ml",
+              "type": "Item",
+              "price": 5.0
+            },
+            {
+              "name": "Μάμος βαρέλι 400ml",
+              "type": "Item",
+              "price": 4.5
+            },
+            {
+              "name": "Μάμος βαρέλι κανάτα 1500ml",
+              "type": "Item",
+              "price": 14.0
+            },
+            {
+              "name": "Μάμος Αφιλτράριστη 500ml",
+              "type": "Item",
+              "price": 5.5
+            },
+            {
+              "name": "Νύμφη βαρέλι 400ml",
+              "type": "Item",
+              "price": 4.5
+            },
+            {
+              "name": "Νύμφη βαρέλι κανάτα 1500ml",
+              "type": "Item",
+              "price": 14.0
+            },
+            {
+              "name": "Άμστελ 500ml",
+              "type": "Item",
+              "price": 4.7
+            },
+            {
+              "name": "Άμστελ Radler 330ml",
+              "type": "Item",
+              "price": 5.5
+            },
+            {
+              "name": "Heineken 500ml",
+              "type": "Item",
+              "price": 4.7
+            },
+            {
+              "name": "Fischer 500ml",
+              "type": "Item",
+              "price": 4.5
+            },
+            {
+              "name": "Μηλοκλέφτης 330ml",
+              "type": "Item",
+              "price": 4.5
+            },
+            {
+              "name": "Άλφα 0% 500ml",
+              "type": "Item",
+              "price": 5.0
+            },
+            {
+              "name": "Heineken 0% 300ml",
+              "type": "Item",
+              "price": 4.5
+            }
+          ]
+        },
+        {
+          "name": "ΝΑ ΤΑ ΤΣΟΥΞΩ",
+          "items": [
+            {
+              "name": "Ψημένη Αμοργιανή",
+              "type": "MultiPrice",
+              "prices": [
+                {
+                  "quantity": "100ml",
+                  "price": 5.0
+                },
+                {
+                  "quantity": "200ml",
+                  "price": 9.0
+                },
+                {
+                  "quantity": "500ml",
+                  "price": 17.0
+                }
+              ]
+            },
+            {
+              "name": "Ρακόμελο",
+              "type": "MultiPrice",
+              "prices": [
+                {
+                  "quantity": "100ml",
+                  "price": 5.0
+                },
+                {
+                  "quantity": "200ml",
+                  "price": 9.0
+                },
+                {
+                  "quantity": "500ml",
+                  "price": 17.0
+                }
+              ]
+            },
+            {
+              "name": "Ούζο",
+              "type": "MultiPrice",
+              "prices": [
+                {
+                  "quantity": "100ml",
+                  "price": 4.0
+                },
+                {
+                  "quantity": "200ml",
+                  "price": 7.0
+                },
+                {
+                  "quantity": "500ml",
+                  "price": 14.0
+                }
+              ]
+            },
+            {
+              "name": "Τσίπουρο/Ρακή Κρήτης",
+              "type": "MultiPrice",
+              "prices": [
+                {
+                  "quantity": "100ml",
+                  "price": 3.5
+                },
+                {
+                  "quantity": "200ml",
+                  "price": 6.5
+                },
+                {
+                  "quantity": "500ml",
+                  "price": 13.0
+                }
+              ]
+            },
+            {
+              "name": "Ούζο/Τσίπουρο Εμφιαλωμένο",
+              "type": "MultiPrice",
+              "prices": [
+                {
+                  "quantity": ""
+                },
+                {
+                  "quantity": "200ml",
+                  "price": 9.0
+                },
+                {
+                  "quantity": ""
+                }
+              ]
+            },
+            {
+              "name": "Οινόμελο",
+              "type": "MultiPrice",
+              "prices": [
+                {
+                  "quantity": ""
+                },
+                {
+                  "quantity": "250ml",
+                  "price": 7.0
+                },
+                {
+                  "quantity": "500ml",
+                  "price": 12.0
+                }
+              ]
+            },
+            {
+              "name": "Κρασί Λευκό",
+              "description": "Ungi Blanc, Φιλέρι ή Μοσψοφίλεο",
+              "type": "MultiPrice",
+              "prices": [
+                {
+                  "quantity": ""
+                },
+                {
+                  "quantity": "250ml",
+                  "price": 4.0
+                },
+                {
+                  "quantity": "500ml",
+                  "price": 6.0
+                }
+              ]
+            },
+            {
+              "name": "Κρασί Ροζέ",
+              "description": "Φιλέρι, Ροδίτης ή Crenanche Rouge",
+              "type": "MultiPrice",
+              "prices": [
+                {
+                  "quantity": ""
+                },
+                {
+                  "quantity": "250ml",
+                  "price": 4.0
+                },
+                {
+                  "quantity": "500ml",
+                  "price": 6.0
+                }
+              ]
+            },
+            {
+              "name": "Κρασί Ροζέ Ημίγλυκο",
+              "description": "Μοσχάτο",
+              "type": "MultiPrice",
+              "prices": [
+                {
+                  "quantity": ""
+                },
+                {
+                  "quantity": "250ml",
+                  "price": 4.0
+                },
+                {
+                  "quantity": "500ml",
+                  "price": 6.0
+                }
+              ]
+            },
+            {
+              "name": "Κρασί Κόκκινο",
+              "description": "Cabernet Franc",
+              "type": "MultiPrice",
+              "prices": [
+                {
+                  "quantity": ""
+                },
+                {
+                  "quantity": "250ml",
+                  "price": 4.0
+                },
+                {
+                  "quantity": "500ml",
+                  "price": 6.0
+                }
+              ]
+            },
+            {
+              "name": "Οινοπνεύματα",
+              "type": "MultiPrice",
+              "prices": [
+                {
+                  "quantity": "Ποτό"
+                },
+                {
+                  "quantity": "Απλό",
+                  "price": 7.0
+                },
+                {
+                  "quantity": "Special",
+                  "price": 8.0
+                }
+              ]
+            },
+            {
+              "name": "Σπιτική Sangria (ποτήρι)",
+              "type": "Item",
+              "price": 4.0
+            }
+          ]
+        },
+        {
+          "name": "MENU",
+          "items": [
+            {
+              "name": "Σαλάτα Πράσινη",
+              "description": "με λόλα κόκκινη και πράσινη, καρότο, αγγούρι, baby ρόκα, ντοματίνια, κρεμμύδι ψιλοκομένο, μαλακό τυρί Τήνου και βινεγκρέτ βαλσάμικο",
+              "type": "Item",
+              "price": 8.0
+            },
+            {
+              "name": "Ντάκος",
+              "description": "με φρέσκια τριμμένη ντομάτα αρωματισμένη με σκόρδο και φρέσκια ρίγανη, κάπαρη, κρεμμυδάκι και τσαλαφούτι",
+              "type": "Item",
+              "price": 8.0
+            },
+            {
+              "name": "Πατάτες Baby",
+              "description": "με πάπρικα, ξύσμα λεμόνι και αλάτι με ροζ πιπέρι",
+              "type": "Item",
+              "price": 4.5
+            },
+            {
+              "name": "Μανιτάρια στο Τηγάνι",
+              "description": "με οινόμελο, ξύσμα lime, κρέμα, λάδι τρούφας και πάστα σκόρδου",
+              "type": "Item",
+              "price": 8.0
+            },
+            {
+              "name": "Πεϊνιρλί",
+              "description": "με ανάμεικτο κιμά και λαχανικά, τριμμένη γκούντα και αυγό μάτι",
+              "type": "Item",
+              "price": 7.5
+            },
+            {
+              "name": "Πικάντικη Φέτα Μπουγιουρντί σε φύλο 🌶️",
+              "description": "με μαρμελάδα ντομάτας",
+              "type": "Item",
+              "price": 7.5
+            },
+            {
+              "name": "Γραβιέρα Ηπείρου 🌶️",
+              "description": "με μαρμελάδα φράουλα",
+              "type": "Item",
+              "price": 8.0
+            },
+            {
+              "name": "Μπρουσκέτα",
+              "description": "σε ψημένο χωριάτικο ψωμί με τυρί κρέμα και σινάπι, σαλάμι μαύρης παπαρούνας, ντοματίνια και baby ρόκα",
+              "type": "Item",
+              "price": 8.5
+            },
+            {
+              "name": "Πατατοκεφτέδες",
+              "description": "με σχοινόπρασο, τυρί γκούντα, μοσχοκάρυδο και τραγανό τηγανιτό κρεμμύδι. Συνοδεύεται με σπιτική sour cream",
+              "type": "Item",
+              "price": 7.5
+            },
+            {
+              "name": "Μπιφτέκια Κοτόπουλο",
+              "description": "με παρμεζάνα, κοπανιστή και πίτες",
+              "type": "Item",
+              "price": 9.5
+            },
+            {
+              "name": "Μπουκιές Κοτόπουλο",
+              "description": "με γλυκόξινη σάλτσα στο τηγάνι και ρυζοσαλάτα με φρέσκια μαγιονέζα με λαχανικά και τουρσί",
+              "type": "Item",
+              "price": 10.0
+            },
+            {
+              "name": "Λουκάνικα Χωριάτικα και Πικάντικα",
+              "description": "στο σχαροτήγανο με μαγιονέχα, σκόρδο, lime και μουστάρδα με μέλι",
+              "type": "Item",
+              "price": 8.5
+            },
+            {
+              "name": "Συκώτι μοσχαρίσιο Γάλακτος",
+              "description": "με σάλτσα οινόμελου, καραμελωμένα κρεμμύδια και πουρέ πατάτας με δυόσμο και lime.",
+              "type": "Item",
+              "price": 10.0
+            },
+            {
+              "name": "Πέννες",
+              "description": "με μοσχαρίσιο καβουρμά, πιπεριά φλωρίνης, κάπαρη, γραβιέρα, και κρέμα",
+              "type": "Item",
+              "price": 10.0
+            },
+            {
+              "name": "Κριθαρότο",
+              "description": "με μπριζολοπανσέτα Κρήτης, πάστα σκόρδου, κρέμα, γκούντα, μυρωδικά, σβησμένο σε κόκκινο κρασί",
+              "type": "Item",
+              "price": 10.0
+            },
+            {
+              "name": "Ψαρονεφρι",
+              "description": "μαριναρισμένο σε οινόμελο και σκόρδο, στο σχαροτήγανο με πατάτες σωτέ βουτήρου, λεμόνι και ρίγανη",
+              "type": "Item",
+              "price": 11.5
+            },
+            {
+              "name": "Γλυκό",
+              "type": "Item",
+              "price": 4.0
+            },
+            {
+              "name": "Παραλλαγή πιάτων για τους χορτοφάγους. Ρωτήστε μας για τα πιάτα ημέρας.",
+              "type": "Disclaimer"
+            },
+            {
+              "name": "Ψωμί χωριάτικο 0.30 ανά άτομο/ Ντιπάκια σως, διάφορα 1.50",
+              "type": "Disclaimer"
+            }
+          ]
+        },
+        {
+          "name": "Cocktail Menu",
+          "items": [
+            {
+              "name": "Classic Cocktail",
+              "type": "Title"
+            },
+            {
+              "name": "Mojito",
+              "description": "Rum, simple syrup, lime, spearmint",
+              "type": "Item",
+              "price": 8.0
+            },
+            {
+              "name": "Margarita",
+              "description": "Tequila, lemon, triple sec",
+              "type": "Item",
+              "price": 8.0
+            },
+            {
+              "name": "Negroni",
+              "description": "Gin, vermouth, campari",
+              "type": "Item",
+              "price": 8.0
+            },
+            {
+              "name": "Paloma",
+              "description": "Tequila, lime, grapefruit soda",
+              "type": "Item",
+              "price": 8.0
+            },
+            {
+              "name": "Signature Cocktail",
+              "type": "Title"
+            },
+            {
+              "name": "Pineapple Express",
+              "description": "Rum, tropic puree, agave, lemon",
+              "type": "Item",
+              "price": 8.0
+            },
+            {
+              "name": "Quarantine Sunset Express",
+              "description": "Vodka, strawberry puree, lime",
+              "type": "Item",
+              "price": 8.0
+            },
+            {
+              "name": "Chilly",
+              "description": "Gin, elderflower, chilly syrup, lime",
+              "type": "Item",
+              "price": 8.0
+            }
+          ]
+        },
+        {
+          "name": "",
+          "items": [
+            {
+              "name": "Εάν έχετε αλλεργία ή δυσανεξία σε κάποιο τρόφιμο, ή συστατικό παρακαλούμε να μας ενημερώσετε",
+              "type": "Item"
+            },
+            {
+              "name": "Στις παραπάνω τιμές συμπεριλαμβάνεται ο Φ.Π.Α.",
+              "type": "Disclaimer"
+            },
+            {
+              "name": "Αγορονομικά υπεύθνος: Χατζηλία Θεοδώρα",
+              "type": "Disclaimer"
+            },
+            {
+              "name": "Οι παραπάνω τιμές μπορούν να αλλάξουν χωρίς προειδοποίηση",
+              "type": "Disclaimer"
+            },
+            {
+              "name": "Ευχαριστούμε για την παρέα και & την προτίμιση!",
+              "type": "Title"
+            },
+            {
+              "name": "ΩΡΑΡΙΟ: ΔΕΥΤΕΡΑ - ΠΕΜΠΤΗ: 17:30 - 1:00 ΠΑΡΑΣΚΕΥΗ - ΣΑΒΒΑΤΟ: 11:00 - 2:00 ΚΥΡΙΑΚΗ: 11:00 - 1:00",
+              "type": "Item"
+            }
+          ]
         }
       ]
     }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="land">
     <!-- Black screen with typing effect -->
     <div v-if="showIntro" class="black-screen">
       <p v-html="displayedText"></p>
@@ -65,7 +65,7 @@ onMounted(() => {
 }
 
 /* Only this element */
-p {
+.land p {
   font-family: 'Bryndan', sans-serif;
 }
 
