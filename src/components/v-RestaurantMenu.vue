@@ -2,9 +2,7 @@
   <div>
     <div v-for="section in menuData?.pages[0]?.sections" :key="section.name" class="section">
       <h2 class="section-title">{{ section.name }}</h2>
-      <!-- Updated title class -->
       <div v-for="(item, index) in section.items" :key="`${section.name}-${index}`">
-        <!-- All item types will remain the same here -->
         <template v-if="item.type === 'Logo'">
           <div class="logo-container">
             <img :src="`/assets/${item.logo}.png`" :alt="item.logo" class="logo-image" />
@@ -162,11 +160,12 @@ onMounted(async () => {
 @media (max-width: 650px) {
   .multi-price-header {
     align-items: flex-start; /* Align items to the left */
+    flex-direction: column; /* Stack the prices vertically */
   }
 
   .multi-price-list {
-    flex-direction: column; /* Stack the prices vertically */
-    gap: 5px; /* Optional: Reduce the gap between items */
+    margin-left: auto; /* Pushes the multi-price list to the right */
+    gap: 5px;
   }
 
   .multi-price-price {
@@ -187,7 +186,7 @@ onMounted(async () => {
 .section {
   margin: 10px;
   border: 10px solid #2f616c; /* 10px border */
-  margin-bottom: 20px; /* 20px space between sections */
+  margin-top: 15px; /* 20px space between sections */
   padding: 10px; /* 10px padding inside the section */
   position: relative;
 }

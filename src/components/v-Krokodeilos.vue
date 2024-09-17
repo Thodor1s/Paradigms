@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import RestaurantMenu from '@/components/RestaurantMenu.vue'
+import RestaurantMenu from '@/components/v-RestaurantMenu.vue'
 </script>

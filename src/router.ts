@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/components/Home.vue'
-import Krokodeilos from '@/components/Krokodeilos.vue'
-import Sourikata from '@/components/Sourikata.vue'
+import Home from '@/components/v-HomeLoader.vue'
+import Krokodeilos from '@/components/v-Krokodeilos.vue'
+import Sourikata from '@/components/v-Sourikata.vue'
 
 const routes = [
   {
