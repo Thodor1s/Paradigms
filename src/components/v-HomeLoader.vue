@@ -1,19 +1,23 @@
 <template>
-  <div class="land">
-    <!-- Black screen with typing effect -->
-    <transition name="fade" mode="out-in">
-      <div v-if="showIntro" class="black-screen">
-        <p v-html="displayedText"></p>
-      </div>
-    </transition>
+  <div class="frame">
+    <div class="content">
+      <div class="land">
+        <!-- Black screen with typing effect -->
+        <transition name="fade" mode="out-in">
+          <div v-if="showIntro" class="black-screen">
+            <p v-html="displayedText"></p>
+          </div>
+        </transition>
 
-    <!-- Home Page content -->
-    <transition name="fade" mode="out-in">
-      <div v-if="!showIntro">
-        <VBackground />
-        <ParadigmsHome />
+        <!-- Home Page content -->
+        <transition name="fade" mode="out-in">
+          <div v-if="!showIntro">
+            <VBackground />
+            <ParadigmsHome />
+          </div>
+        </transition>
       </div>
-    </transition>
+    </div>
   </div>
 </template>
 
@@ -74,6 +78,17 @@ onMounted(() => {
 
 <style>
 /* Smooth fade transition */
+
+.frame {
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  overflow-y: hidden;
+}
 
 .fade-enter-active,
 .fade-leave-active {

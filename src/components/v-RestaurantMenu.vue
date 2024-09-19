@@ -1,11 +1,23 @@
 <template>
-  <div>
+  <div class="menu">
     <div v-for="section in menuData?.pages[0]?.sections" :key="section.name" class="section">
       <h2 class="section-title">{{ section.name }}</h2>
       <div v-for="(item, index) in section.items" :key="`${section.name}-${index}`">
         <template v-if="item.type === 'Logo'">
           <div class="logo-container">
-            <img :src="`/assets/${item.logo}.png`" :alt="item.logo" class="logo-image" />
+            <template v-if="item.link">
+              <!-- Internal Link -->
+              <router-link v-if="isInternalLink(item.link)" :to="item.link">
+                <img :src="`/assets/${item.logo}.png`" :alt="item.logo" class="logo-image" />
+              </router-link>
+              <!-- External Link -->
+              <a v-else :href="item.link" target="_blank" rel="noopener">
+                <img :src="`/assets/${item.logo}.png`" :alt="item.logo" class="logo-image" />
+              </a>
+            </template>
+            <template v-else>
+              <img :src="`/assets/${item.logo}.png`" :alt="item.logo" class="logo-image" />
+            </template>
           </div>
         </template>
         <template v-else-if="item.type === 'Item'">
@@ -54,6 +66,7 @@
           </div>
         </template>
       </div>
+      <vLeaves />
     </div>
   </div>
 </template>
@@ -61,6 +74,7 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import vLeaves from './v-Leaves.vue'
 
 interface Menu {
   pages: {
@@ -68,7 +82,7 @@ interface Menu {
     sections: {
       name: string
       items: (
-        | { type: 'Logo'; logo: string }
+        | { type: 'Logo'; logo: string; link?: string }
         | { type: 'Item'; name: string; description?: string; price?: number }
         | { type: 'Disclaimer'; name: string }
         | { type: 'Title'; name: string }
@@ -100,9 +114,18 @@ onMounted(async () => {
     menuData.value = data.default as Menu
   }
 })
+
+// Helper function to check if a link is internal
+const isInternalLink = (link: string) => {
+  return link.startsWith('/') && !link.startsWith('//') // Internal links typically start with '/'
+}
 </script>
 
 <style scoped>
+.menu {
+  overflow: hidden;
+}
+
 .logo {
   font-size: 24px;
   font-weight: bold;
