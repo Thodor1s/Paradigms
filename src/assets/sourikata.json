@@ -71,13 +71,13 @@
               "name": "Φυσικός Χυμός Πορτοκάλι",
               "description": "",
               "type": "Item",
-              "price": 3.5
+              "price": 3.8
             },
             {
               "name": "Σπιτική Λεμονάδα",
               "description": "",
               "type": "Item",
-              "price": 3.5
+              "price": 3.8
             }
           ]
         },
@@ -87,70 +87,91 @@
             {
               "name": "Ελληνικός Μονός",
               "type": "Item",
-              "price": 2.0
+              "price": 2.3
             },
             {
               "name": "Ελληνικός Διπλός",
               "type": "Item",
-              "price": 2.5
+              "price": 2.8
             },
             {
               "name": "Espresso Μονός",
               "type": "Item",
-              "price": 2.0
+              "price": 2.8
             },
             {
               "name": "Espresso Διπλός",
               "type": "Item",
-              "price": 2.8
+              "price": 3.3
+            },
+            {
+              "name": "Espresso Μακιάτο Μονός",
+              "type": "Item",
+              "price": 2.7
             },
             {
               "name": "Espresso Μακιάτο Διπλός",
               "type": "Item",
-              "price": 2.5
+              "price": 3.3
             },
             {
               "name": "Freddo Espresso",
               "type": "Item",
-              "price": 3.0
+              "price": 3.3
             },
             {
               "name": "Espresso Americano",
               "type": "Item",
-              "price": 3.0
+              "price": 3.3
+            },
+            {
+              "name": "Espresso Lungo Μονός",
+              "type": "Item",
+              "price": 2.8
+            },
+            {
+              "name": "Espresso Lungo Διπλός",
+              "type": "Item",
+              "price": 3.3
             },
             {
               "name": "Capuccino Μονός",
               "type": "Item",
-              "price": 3.0
+              "price": 3.3
             },
             {
               "name": "Capuccino Διπλός",
               "type": "Item",
-              "price": 3.2
+              "price": 3.8
             },
             {
               "name": "Freddo Capuccino",
               "type": "Item",
-              "price": 3.2
+              "price": 3.8
             },
             {
               "name": "Νες /Φραπές",
               "type": "Item",
-              "price": 3.0
+              "price": 3.5
             },
             {
               "name": "Φίλτρου",
               "type": "Item",
-              "price": 3.0
+              "price": 3.3
+            },
+            {
+              "name": "Φίλτρου με γεύσεις",
+              "description": "βανίλια, μπισκότο, φουντούκι, καραμέλα, μαύρη σοκολάτα",
+              "type": "Item",
+              "price": 3.3
             },
             {
               "name": "*DECAF για Espresso και Capuccino",
               "type": "Disclaimer"
             },
             {
-              "name": "Σοκολάτα (Ζεστή / Κρύα)",
-              "description": "Γάλακτος, Φουντούκι, Φράουλα, Καραμέλα",
+              "name": "Σοκολάτα",
+              "description": "Γάλακτος, Bitter, Φουντούκι, Λευκή, Φράουλα, Πορτοκάλι, Καραμέλα",
               "type": "Item",
               "price": 3.5
             }
@@ -550,11 +571,11 @@
               "name": "Πατάτες Baby",
               "description": "με πάπρικα, ξύσμα λεμόνι και αλάτι με ροζ πιπέρι",
               "type": "Item",
-              "price": 4.5
+              "price": 5
             },
             {
-              "name": "Μανιτάρια στο Τηγάνι",
-              "description": "με οινόμελο, ξύσμα lime, κρέμα, λάδι τρούφας και πάστα σκόρδου",
+              "name": "Μανιτάρια",
+              "description": "στο τηγάνι με οινόμελο, ξύσμα lime, κρέμα, λάδι τρούφας και πάστα σκόρδου",
               "type": "Item",
               "price": 8.0
             },
@@ -589,10 +610,10 @@
               "price": 7.5
             },
             {
-              "name": "Μπιφτέκια Κοτόπουλο",
-              "description": "με παρμεζάνα, κοπανιστή και πίτες",
+              "name": "Κεμπάμπ Ανάμεικτο",
+              "description": "με σάλτσα ντομάτας, πίτες και γιαούρτι",
               "type": "Item",
-              "price": 9.5
+              "price": 10.0
             },
             {
               "name": "Μπουκιές Κοτόπουλο",
@@ -604,7 +625,7 @@
               "name": "Λουκάνικα Χωριάτικα και Πικάντικα",
               "description": "στο σχαροτήγανο με μαγιονέχα, σκόρδο, lime και μουστάρδα με μέλι",
               "type": "Item",
-              "price": 8.5
+              "price": 9.0
             },
             {
               "name": "Συκώτι μοσχαρίσιο Γάλακτος",
@@ -614,7 +635,7 @@
             },
             {
               "name": "Πέννες",
-              "description": "με μοσχαρίσιο καβουρμά, πιπεριά φλωρίνης, κάπαρη, γραβιέρα, και κρέμα",
+              "description": "με καπνιστό φιλέτο κοτόπουλου, κρεμμύδι, κρέμα και παρμεζάνα",
               "type": "Item",
               "price": 10.0
             },
