@@ -1,7 +1,33 @@
 <template>
   <div ref="scrollSections" class="home">
-    <section data-scroll-section class="full-page-section">
+    <!-- Navigation buttons -->
+    <div class="nav-buttons">
+      <button @click="scrollToSection(0)">Home</button>
+      <button @click="scrollToSection(1)">About Us</button>
+      <button @click="scrollToSection(2)">Projects</button>
+      <button @click="scrollToSection(3)">Contact</button>
+    </div>
+
+    <!-- Section 1: Logo -->
+    <section data-scroll-section class="full-page-section logo-section">
       <img src="/assets/paradigms.png" alt="Paradigms Logo" class="logo" />
+      <div class="scrolldown">
+        <div class="chevrons">
+          <div class="chevrondown"></div>
+          <div class="chevrondown"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: About Us -->
+    <section data-scroll-section class="full-page-section about-section">
+      <h1>We are Paradigms</h1>
+      <p>We help non-profits and ethical businesses with their digital transformation!</p>
+    </section>
+
+    <!-- Section 3: Projects -->
+    <section data-scroll-section class="full-page-section projects-section">
+      <h1>Our Projects</h1>
       <nav class="menu-links">
         <ul>
           <li>
@@ -13,7 +39,6 @@
             <li><router-link to="/krokodeilos">Krokodeilos</router-link></li>
             <li><router-link to="/sourikata">Sourikata</router-link></li>
           </div>
-
           <li>
             <a href="#" class="under-construction">Evimnos</a>
             <span class="tooltip">Under Construction</span>
@@ -21,19 +46,27 @@
         </ul>
       </nav>
     </section>
+
+    <!-- Section 4: Contact -->
+    <section data-scroll-section class="full-page-section contact-section">
+      <h1>Contact Us</h1>
+      <p>Feel free to reach out at +30 693 40 94 282 or hello@paradigms.gr</p>
+    </section>
   </div>
 </template>
 
 <script>
 import locomotiveScroll from 'locomotive-scroll'
+
 export default {
   name: 'ParadigmsHome',
   data() {
     return {
-      scrollIns: null
+      scroll: null
     }
   },
   mounted() {
+    window.addEventListener('resize', this.handleResize)
     this.$nextTick(() => {
       this.initLocoScroll()
     })
@@ -43,18 +76,43 @@ export default {
       this.scroll = new locomotiveScroll({
         el: this.$refs['scrollSections'],
         smooth: true,
-        smoothMobile: true,
+        smartphone: {
+          smooth: true,
+          breakpoint: 0
+        },
+        tablet: {
+          smooth: true,
+          breakpoint: 0
+        },
         getDirection: true
       })
+
+      // Update the scroll instance after content renders to recalculate dimensions
+      this.scroll.update()
+    },
+    scrollToSection(index) {
+      const sections = this.$refs.scrollSections.querySelectorAll('section')
+      const target = sections[index]
+      this.scroll.scrollTo(target)
+    },
+    handleResize() {
+      this.scroll.update()
     }
+  },
+  updated() {
+    // Call update whenever Vue re-renders to ensure locomotive-scroll is aware
+    this.scroll.update()
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize)
   }
 }
 </script>
 
 <style scoped>
+/* Full-page sections */
 .full-page-section {
   font-family: 'Bryndan', sans-serif;
-
   color: white;
   height: 100vh;
   display: flex;
@@ -64,11 +122,170 @@ export default {
   text-align: center;
 }
 
+/* Fade-in animation for logo and buttons */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* copy from here */
+.scrolldown {
+  --color: white;
+  --sizeX: 30px;
+  --sizeY: 50px;
+  position: relative;
+  width: var(--sizeX);
+  height: var(--sizeY);
+  margin-left: var(sizeX / 2);
+  border: calc(var(--sizeX) / 10) solid var(--color);
+  border-radius: 50px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+
+  /* Initial opacity for fade-in */
+  opacity: 0;
+  transition: opacity 1s ease-in; /* 1s transition for fade-in */
+  animation: fadeIn 0.5s ease-in forwards;
+  animation-delay: 2s; /* Delay of 2 seconds */
+}
+
+/* Define the fade-in keyframe */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.scrolldown::before {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  background-color: var(--color);
+  border-radius: 100%;
+  animation: scrolldown-anim 2s infinite;
+  box-sizing: border-box;
+  box-shadow: 0px -5px 3px 1px #ffffff66;
+}
+
+@keyframes scrolldown-anim {
+  0% {
+    opacity: 0;
+    height: 6px;
+  }
+  40% {
+    opacity: 1;
+    height: 10px;
+  }
+  80% {
+    transform: translate(0, 20px);
+    height: 10px;
+    opacity: 0;
+  }
+  100% {
+    height: 3px;
+    opacity: 0;
+  }
+}
+
+.chevrons {
+  padding: 6px 0 0 0;
+  margin-left: -3px;
+  margin-top: 48px;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chevrondown {
+  margin-top: -2px;
+  position: relative;
+  border: solid var(--color);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+}
+.chevrondown:nth-child(odd) {
+  animation: pulse 500ms ease infinite alternate;
+}
+.chevrondown:nth-child(even) {
+  animation: pulse 500ms ease infinite alternate 250ms;
+}
+@keyframes pulse {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+/*copy until here */
+
+/* Specific section backgrounds */
+.logo-section {
+  padding-top: 30px;
+  background: transparent;
+}
+
+.about-section {
+  background-color: black;
+  opacity: 1;
+}
+
+.projects-section {
+  background-color: rgb(53, 53, 53);
+  opacity: 1;
+}
+
+.contact-section {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Logo styling */
 .logo {
   max-width: 300px;
   margin-bottom: 20px;
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 0.5s; /* Fade in after 1 second */
 }
 
+/* Navigation buttons on the first section */
+.nav-buttons {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10; /* Ensure the buttons are on top */
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 0.5s; /* Fade in after 0.5 seconds */
+}
+.nav-buttons button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-family: 'Bryndan';
+  font-size: 15px;
+  border-radius: 6px;
+}
+
+.nav-buttons button:hover {
+  background-color: #ccc;
+}
+
+/* Menu links styling (from the projects section) */
 .menu-links ul {
   list-style-type: none;
   padding: 0;

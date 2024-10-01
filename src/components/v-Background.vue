@@ -20,7 +20,7 @@ export default {
         baseColor: 0x0,
         backgroundColor: 0x0,
         amplitudeFactor: 2.4,
-        size: 2.7
+        size: 2.4
       }
     }
   }
