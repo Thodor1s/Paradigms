@@ -9,7 +9,7 @@
     </div>
 
     <!-- Section 1: Logo -->
-    <section data-scroll-section class="full-page-section logo-section">
+    <section class="full-page-section logo-section">
       <img src="/assets/paradigms.png" alt="Paradigms Logo" class="logo" />
       <div class="scrolldown">
         <div class="chevrons">
@@ -20,13 +20,13 @@
     </section>
 
     <!-- Section 2: About Us -->
-    <section data-scroll-section class="full-page-section about-section">
+    <section class="full-page-section about-section">
       <h1>We are Paradigms</h1>
       <p>We help non-profits and ethical businesses with their digital transformation!</p>
     </section>
 
     <!-- Section 3: Projects -->
-    <section data-scroll-section class="full-page-section projects-section">
+    <section class="full-page-section projects-section">
       <h1>Our Projects</h1>
       <nav class="menu-links">
         <ul>
@@ -48,7 +48,7 @@
     </section>
 
     <!-- Section 4: Contact -->
-    <section data-scroll-section class="full-page-section contact-section">
+    <section class="full-page-section contact-section">
       <h1>Contact Us</h1>
       <p>Feel free to reach out at +30 693 40 94 282 or hello@paradigms.gr</p>
     </section>
@@ -56,60 +56,26 @@
 </template>
 
 <script>
-import locomotiveScroll from 'locomotive-scroll'
-
 export default {
   name: 'ParadigmsHome',
-  data() {
-    return {
-      scroll: null
-    }
-  },
-  mounted() {
-    window.addEventListener('resize', this.handleResize)
-    this.$nextTick(() => {
-      this.initLocoScroll()
-    })
-  },
   methods: {
-    initLocoScroll() {
-      this.scroll = new locomotiveScroll({
-        el: this.$refs['scrollSections'],
-        smooth: true,
-        smartphone: {
-          smooth: true,
-          breakpoint: 0
-        },
-        tablet: {
-          smooth: true,
-          breakpoint: 0
-        },
-        getDirection: true
-      })
-
-      // Update the scroll instance after content renders to recalculate dimensions
-      this.scroll.update()
-    },
     scrollToSection(index) {
       const sections = this.$refs.scrollSections.querySelectorAll('section')
       const target = sections[index]
-      this.scroll.scrollTo(target)
-    },
-    handleResize() {
-      this.scroll.update()
+      target.scrollIntoView({ behavior: 'smooth' })
     }
-  },
-  updated() {
-    // Call update whenever Vue re-renders to ensure locomotive-scroll is aware
-    this.scroll.update()
-  },
-  beforeUnmount() {
-    window.removeEventListener('resize', this.handleResize)
   }
 }
 </script>
 
 <style scoped>
+/* Home container */
+.home {
+  overflow-y: auto;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
 /* Full-page sections */
 .full-page-section {
   font-family: 'Bryndan', sans-serif;
@@ -153,7 +119,6 @@ export default {
   animation-delay: 2s; /* Delay of 2 seconds */
 }
 
-/* Define the fade-in keyframe */
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -254,9 +219,9 @@ export default {
 .logo {
   max-width: 300px;
   margin-bottom: 20px;
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
   animation: fadeIn 1s ease-in forwards;
-  animation-delay: 0.5s; /* Fade in after 1 second */
+  animation-delay: 0.5s;
 }
 
 /* Navigation buttons on the first section */
@@ -264,10 +229,10 @@ export default {
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 10; /* Ensure the buttons are on top */
-  opacity: 0; /* Initially hidden */
+  z-index: 10;
+  opacity: 0;
   animation: fadeIn 1s ease-in forwards;
-  animation-delay: 0.5s; /* Fade in after 0.5 seconds */
+  animation-delay: 0.5s;
 }
 .nav-buttons button {
   margin-right: 10px;

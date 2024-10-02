@@ -15,12 +15,12 @@ export default {
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        minHeight: 200.0,
-        minWidth: 200.0,
+        minHeight: 10.0,
+        minWidth: 10.0,
         baseColor: 0x0,
         backgroundColor: 0x0,
-        amplitudeFactor: 2.4,
-        size: 2.4
+        amplitudeFactor: 2,
+        size: 2
       }
     }
   }
