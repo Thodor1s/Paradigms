@@ -5,7 +5,7 @@
         <!-- Black screen with typing effect -->
         <transition name="fade" mode="out-in">
           <div v-if="showIntro" class="black-screen">
-            <p v-html="displayedText"></p>
+            <p class="landtext" v-html="displayedText"></p>
           </div>
         </transition>
 
@@ -115,7 +115,7 @@ onMounted(() => {
 }
 
 /* Only this element */
-.land p {
+.landtext {
   width: 160px;
   height: 140px;
   background-color: black;

@@ -2,7 +2,6 @@
   <div ref="scrollSections" class="home">
     <!-- Navigation buttons -->
     <div class="nav-buttons">
-      <button @click="scrollToSection(0)">Home</button>
       <button @click="scrollToSection(1)">About Us</button>
       <button @click="scrollToSection(2)">Projects</button>
       <button @click="scrollToSection(3)">Contact</button>
@@ -21,36 +20,127 @@
 
     <!-- Section 2: About Us -->
     <section class="full-page-section about-section">
-      <h1>We are Paradigms</h1>
-      <p>We help non-profits and ethical businesses with their digital transformation!</p>
+      <div style="padding: 50px; max-width: 900px">
+        <h1>we make ethical software</h1>
+        <br />
+        <p>
+          Hello there! I'm
+          <u
+            onclick="window.location.href='https://www.linkedin.com/in/theobizbis/'"
+            style="cursor: pointer"
+            >Theodred</u
+          >, and I believe tech should make the real world a better place. I founded Paradigms to
+          offer software engineering and consulting services on a pro-bono or volunteer basis to
+          non-profits and ethical businesses. My mission? To create exemplary, impactful and ethical
+          solutions that are as affordable as they are awesome!
+        </p>
+        <br />
+        <p>
+          At
+          <u
+            onclick="window.location.href='https://www.linkedin.com/company/paradigms/'"
+            style="cursor: pointer"
+            >Paradigms</u
+          >, we're all about transparency, integrity, and making a positive impact. When you partner
+          with us, you're teaming up with Theodred and a team of passionate software engineers,
+          partners, and volunteers who excel at delivering ethical, sustainable solutions that truly
+          make a difference! Do you represent a non-profit or an ethical business?
+          <u @click="scrollToSection(3)" style="cursor: pointer">Contact Us!</u>
+        </p>
+      </div>
     </section>
 
     <!-- Section 3: Projects -->
     <section class="full-page-section projects-section">
-      <h1>Our Projects</h1>
-      <nav class="menu-links">
-        <ul>
-          <li>
-            <a href="#" class="under-construction">BN Accounting</a>
-            <span class="tooltip">Under Construction</span>
-          </li>
-          <li><a href="https://dimension-factory.gr" target="_blank">Dimension Factory</a></li>
-          <div>
-            <li><router-link to="/krokodeilos">Krokodeilos</router-link></li>
-            <li><router-link to="/sourikata">Sourikata</router-link></li>
+      <div class="projects-container">
+        <h1 class="projects-heading">Our Projects</h1>
+        <div class="carousel">
+          <button @click="prevSlide" class="carousel-control prev">‹</button>
+          <div class="carousel-track-container">
+            <ul class="carousel-track">
+              <li class="carousel-slide" style="background-color: #ca2e16">
+                <div style="max-width: 900px">
+                  <h2>Dimension Factory</h2>
+                  <br />
+                  <p>
+                    Dimension Factory is a cutting-edge Tabletop RPG platform that puts the full
+                    list of digital tools for progression, game tracking, and storytelling at the
+                    hands of small and independent Game Makers and Game Masters. DF is not a Virtual
+                    Tabletop. We've lovingly designed it as a tool that reinforces Tabletop
+                    experiences and does not detract from the in-person nature of the games we love.
+                  </p>
+                  <br />
+                  <span class="tooltip">
+                    <button onclick="window.location.href='https://dimension-factory.gr'">
+                      Go to Dimension Factory
+                    </button>
+                    <button @click="scrollToSection(3)">
+                      That sounds awesome for my TTRPG system!
+                    </button>
+                  </span>
+                </div>
+              </li>
+              <li class="carousel-slide">
+                <div style="max-width: 900px">
+                  <h2>BN Accounting</h2>
+                  <br />
+                  <p>
+                    BN Accounting is a platform designed to provide trustworthy advice on
+                    accounting, tax-consulting, employment, social security and pensions in Greece.
+                    Users can ask questions and receive help from certified Fiduciaries, certified
+                    Tax Consultants by the Economic Chamber of Greece, and certified public
+                    insurance and pension consultants by EFKA, ensuring something unique for the
+                    Greek financial market:
+                    <u>impartial guidance</u> that prioritizes their interests.
+                  </p>
+                  <br />
+                  <span class="tooltip">
+                    BN Accounting is already operational, and the platform is at the final stages of
+                    development. It will be available to the general public some time in Q4/2024
+                  </span>
+                </div>
+              </li>
+              <li class="carousel-slide" style="background-color: #222222">
+                <div style="max-width: 900px">
+                  <h2>Evimnos</h2>
+                  <br />
+                  <p>
+                    Evimnos is an app designed to help cultural institutions plan and manage events
+                    according to established protocols. Originally developed for military bands, it
+                    is equally applicable to traditional dance clubs, ceremony halls, and religious
+                    institutions. Evimnos streamlines scheduling based on protocol, equipment and
+                    personnel.
+                  </p>
+                  <br />
+                  <span class="tooltip">
+                    Evimnos is an in-house project. The original Evimnos was built as a windows
+                    application. We are currently rebuilding it as a web platform and pitching it to
+                    cultural institutions with an early 2025 release.
+                    <br />
+                    <br />
+                    <button @click="scrollToSection(3)">I'm interested in Evimnos!</button>
+                  </span>
+                </div>
+              </li>
+              <li class="carousel-slide">
+                <h2>Other Projects:</h2>
+                <router-link to="/krokodeilos" style="color: darkgray"
+                  >Krokodeilos Menu</router-link
+                >
+                <router-link to="/sourikata" style="color: darkgray">Sourikata Menu</router-link>
+              </li>
+            </ul>
           </div>
-          <li>
-            <a href="#" class="under-construction">Evimnos</a>
-            <span class="tooltip">Under Construction</span>
-          </li>
-        </ul>
-      </nav>
+          <button @click="nextSlide" class="carousel-control next">›</button>
+        </div>
+      </div>
     </section>
 
     <!-- Section 4: Contact -->
     <section class="full-page-section contact-section">
       <h1>Contact Us</h1>
-      <p>Feel free to reach out at +30 693 40 94 282 or hello@paradigms.gr</p>
+      <p>Drop by and say hello!</p>
+      <p>Reach out to us at +30 693 40 94 282 or hello@paradigms.gr!</p>
     </section>
   </div>
 </template>
@@ -58,11 +148,31 @@
 <script>
 export default {
   name: 'ParadigmsHome',
+  data() {
+    return {
+      currentSlide: 0
+    }
+  },
   methods: {
     scrollToSection(index) {
       const sections = this.$refs.scrollSections.querySelectorAll('section')
       const target = sections[index]
       target.scrollIntoView({ behavior: 'smooth' })
+    },
+    prevSlide() {
+      const slides = this.$refs.scrollSections.querySelectorAll('.carousel-slide')
+      this.currentSlide = this.currentSlide > 0 ? this.currentSlide - 1 : slides.length - 1
+      this.updateSlidePosition()
+    },
+    nextSlide() {
+      const slides = this.$refs.scrollSections.querySelectorAll('.carousel-slide')
+      this.currentSlide = this.currentSlide < slides.length - 1 ? this.currentSlide + 1 : 0
+      this.updateSlidePosition()
+    },
+    updateSlidePosition() {
+      const slides = this.$refs.scrollSections.querySelectorAll('.carousel-slide')
+      const track = this.$refs.scrollSections.querySelector('.carousel-track')
+      track.style.transform = `translateX(-${this.currentSlide * 100}%)`
     }
   }
 }
@@ -78,6 +188,7 @@ export default {
 
 /* Full-page sections */
 .full-page-section {
+  z-index: 5;
   font-family: 'Bryndan', sans-serif;
   color: white;
   height: 100vh;
@@ -86,6 +197,7 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative; /* Add this */
 }
 
 /* Fade-in animation for logo and buttons */
@@ -197,6 +309,7 @@ export default {
 
 /* Specific section backgrounds */
 .logo-section {
+  z-index: 1;
   padding-top: 30px;
   background: transparent;
 }
@@ -213,6 +326,19 @@ export default {
 
 .contact-section {
   background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.contact-left,
+.contact-right {
+  width: 50%;
+  padding: 20px;
+}
+
+.contact-right {
+  border-left: 2px solid #ccc;
 }
 
 /* Logo styling */
@@ -229,7 +355,7 @@ export default {
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 10;
+  z-index: 2;
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
   animation-delay: 0.5s;
@@ -246,66 +372,97 @@ export default {
   border-radius: 6px;
 }
 
+.tooltip button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-family: 'Bryndan';
+  font-size: 15px;
+  border-radius: 6px;
+  margin: 5px;
+}
+
 .nav-buttons button:hover {
   background-color: #ccc;
 }
 
-/* Menu links styling (from the projects section) */
-.menu-links ul {
-  list-style-type: none;
-  padding: 0;
+.projects-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.projects-heading {
+  position: absolute;
+  top: 20px; /* Adjust as needed */
+  width: 100%;
+  z-index: 2;
+  text-align: center;
   margin: 0;
+}
+
+/* Carousel styling */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  height: 100%; /* Adjust as needed */
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  padding: 0;
+  height: 100%;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 50px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.menu-links li {
-  margin: 10px 0;
-  position: relative;
-}
-
-.menu-links a {
-  color: darkgray;
-  font-size: 1.2rem;
-  text-decoration: none;
-  position: relative;
-}
-
-.menu-links a:hover {
-  text-decoration: underline;
-  color: white;
-}
-
-.menu-links .tooltip {
-  top: 35px;
-  visibility: hidden;
-  background-color: grey;
-  color: white;
-  text-align: center;
-  padding: 5px;
-  border-radius: 4px;
+.carousel-control {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   position: absolute;
-
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  font-size: 1rem;
-  width: 150px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
 }
 
-.menu-links a.under-construction:hover + .tooltip {
-  visibility: visible;
+.carousel-control.prev {
+  left: 10px;
 }
 
-@media (min-width: 768px) {
-  .menu-links ul {
-    flex-direction: row;
-    justify-content: center;
-  }
+.carousel-control.next {
+  right: 10px;
+}
 
-  .menu-links li {
-    margin: 0 20px;
-  }
+/* Other styles */
+ul {
+  list-style-type: none;
 }
 
 @font-face {
