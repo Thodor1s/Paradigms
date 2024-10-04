@@ -170,7 +170,7 @@ export default {
       this.updateSlidePosition()
     },
     updateSlidePosition() {
-      const slides = this.$refs.scrollSections.querySelectorAll('.carousel-slide')
+      //const slides = this.$refs.scrollSections.querySelectorAll('.carousel-slide')
       const track = this.$refs.scrollSections.querySelector('.carousel-track')
       track.style.transform = `translateX(-${this.currentSlide * 100}%)`
     }
@@ -438,12 +438,10 @@ export default {
 }
 
 .carousel-control {
-  width: 30px;
+  width: 20px;
   height: 30px;
-  border-radius: 50%;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
   color: white;
