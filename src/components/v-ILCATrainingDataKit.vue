@@ -71,7 +71,7 @@ export default {
       // Change the glob import path to be relative
       const csvFiles = import.meta.glob('../assets/ILCAData/*.csv')
       this.csvFiles = Object.keys(csvFiles).map((file) => {
-        return file.replace('./assets/ILCAData/', '') // Extract filename
+        return file.replace('../assets/ILCAData/', '') // Extract filename
       })
     },
     async loadFileData(fileName) {
