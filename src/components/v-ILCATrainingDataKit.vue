@@ -5,20 +5,20 @@
       <h4>Customize Map:</h4>
       <div>
         Marker Color Range - Min speed (in Knots):
-        <input type="number" v-model="minSpeed" />
+        <input class="ILCAInput" type="number" v-model="minSpeed" />
       </div>
       <div>
         Marker Color Range - Max speed (in Knots):
-        <input type="number" v-model="maxSpeed" />
+        <input class="ILCAInput" type="number" v-model="maxSpeed" />
       </div>
       <!--
       <div>
         Marker Size:
-        <input type="number" v-model="markerSize" />
+        <input class="ILCAInput"  type="number" v-model="markerSize" />
       </div>
       <div>
         Update Interval (ms):
-        <input type="number" v-model="updateInterval" />
+        <input class="ILCAInput" type="number" v-model="updateInterval" />
       </div>
       -->
       <button @click="updateMapSettings">Apply</button>
@@ -68,9 +68,10 @@ export default {
       this.layerGroup = L.layerGroup().addTo(this.map)
     },
     loadCsvFiles() {
-      const csvFiles = import.meta.glob('@/assets/ILCAData/*.csv')
+      // Change the glob import path to be relative
+      const csvFiles = import.meta.glob('../assets/ILCAData/*.csv')
       this.csvFiles = Object.keys(csvFiles).map((file) => {
-        return file.replace('/src/assets/ILCAData/', '') // Extract filename
+        return file.replace('./assets/ILCAData/', '') // Extract filename
       })
     },
     async loadFileData(fileName) {
@@ -226,7 +227,7 @@ export default {
   background-color: #f1f1f1;
 }
 
-input {
+.ILCAInput {
   width: 60px;
   margin-top: 3px;
   padding: 5px 10px;
