@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/components/v-HomeLoader.vue'
 import Krokodeilos from '@/components/v-Krokodeilos.vue'
 import Sourikata from '@/components/v-Sourikata.vue'
+import vILCATrainingDataKit from './components/v-ILCATrainingDataKit.vue'
 
 const routes = [
   {
@@ -22,6 +23,11 @@ const routes = [
     path: '/sourikata',
     name: 'Sourikata',
     component: Sourikata
+  },
+  {
+    path: '/ILCA-training-data-kit',
+    name: 'ILCA Training Data Kit',
+    component: vILCATrainingDataKit
   }
 ]
 

@@ -1,8 +1,8 @@
 <template>
   <div ref="scrollSections" class="home">
     <!-- Navigation buttons -->
-    <div class="nav-buttons">
-      <button @click="scrollToSection(1)">About Us</button>
+    <div :class="['nav-buttons', { hidden: hideNavButtons }]">
+      <button @click="scrollToSection(1)">About</button>
       <button @click="scrollToSection(2)">Projects</button>
       <button @click="scrollToSection(3)">Contact</button>
     </div>
@@ -28,11 +28,11 @@
           <u
             onclick="window.location.href='https://www.linkedin.com/in/theobizbis/'"
             style="cursor: pointer"
-            >Theodred</u
+            >Théodred</u
           >, and I believe tech should make the real world a better place. I founded Paradigms to
           offer software engineering and consulting services on a pro-bono or volunteer basis to
           non-profits and ethical businesses. My mission? To create exemplary, impactful and ethical
-          solutions that are as affordable as they are awesome!
+          solutions for causes I believe in!
         </p>
         <br />
         <p>
@@ -42,10 +42,10 @@
             style="cursor: pointer"
             >Paradigms</u
           >, we're all about transparency, integrity, and making a positive impact. When you partner
-          with us, you're teaming up with Theodred and a team of passionate software engineers,
+          with us, you're teaming up with Théodred and a team of passionate software engineers,
           partners, and volunteers who excel at delivering ethical, sustainable solutions that truly
           make a difference! Do you represent a non-profit or an ethical business?
-          <u @click="scrollToSection(3)" style="cursor: pointer">Contact Us!</u>
+          <u @click="scrollToSection(3)" style="cursor: pointer">Contact Me!</u>
         </p>
       </div>
     </section>
@@ -53,13 +53,14 @@
     <!-- Section 3: Projects -->
     <section class="full-page-section projects-section">
       <div class="projects-container">
-        <h1 class="projects-heading">Our Projects</h1>
+        <h1 class="projects-heading">Projects</h1>
         <div class="carousel">
           <button @click="prevSlide" class="carousel-control prev">‹</button>
           <div class="carousel-track-container">
             <ul class="carousel-track">
-              <li class="carousel-slide" style="background-color: #ca2e16">
+              <li class="carousel-slide" style="background-color: #e94f37">
                 <div style="max-width: 900px">
+                  <img src="/assets/df.png" alt="DF" class="plack1-1" />
                   <h2>Dimension Factory</h2>
                   <br />
                   <p>
@@ -80,8 +81,9 @@
                   </span>
                 </div>
               </li>
-              <li class="carousel-slide">
+              <li class="carousel-slide" style="background-color: #222222">
                 <div style="max-width: 900px">
+                  <img src="/assets/bn.png" alt="BN" class="plack1-1" />
                   <h2>BN Accounting</h2>
                   <br />
                   <p>
@@ -89,9 +91,8 @@
                     accounting, tax-consulting, employment, social security and pensions in Greece.
                     Users can ask questions and receive help from certified Fiduciaries, certified
                     Tax Consultants by the Economic Chamber of Greece, and certified public
-                    insurance and pension consultants by EFKA, ensuring something unique for the
-                    Greek financial market:
-                    <u>impartial guidance</u> that prioritizes their interests.
+                    insurance and pension consultants by EFKA. Unlike other professionals, with BN
+                    provides users with impartial guidance that prioritizes <u>their</u> interests.
                   </p>
                   <br />
                   <span class="tooltip">
@@ -100,9 +101,9 @@
                   </span>
                 </div>
               </li>
-              <li class="carousel-slide" style="background-color: #222222">
+              <li class="carousel-slide" style="background-color: #214478">
                 <div style="max-width: 900px">
-                  <h2>Evimnos</h2>
+                  <img src="/assets/evimnos.png" alt="Evimnos" class="plack1-1" />
                   <br />
                   <p>
                     Evimnos is an app designed to help cultural institutions plan and manage events
@@ -114,20 +115,36 @@
                   <br />
                   <span class="tooltip">
                     Evimnos is an in-house project. The original Evimnos was built as a windows
-                    application. We are currently rebuilding it as a web platform and pitching it to
+                    application. I'm currently rebuilding it as a web platform and pitching it to
                     cultural institutions with an early 2025 release.
                     <br />
                     <br />
-                    <button @click="scrollToSection(3)">I'm interested in Evimnos!</button>
+                    <button @click="scrollToSection(3)">I'm interested in evimnos!</button>
                   </span>
                 </div>
               </li>
-              <li class="carousel-slide">
-                <h2>Other Projects:</h2>
-                <router-link to="/krokodeilos" style="color: darkgray"
-                  >Krokodeilos Menu</router-link
-                >
-                <router-link to="/sourikata" style="color: darkgray">Sourikata Menu</router-link>
+              <li
+                class="carousel-slide"
+                style="
+                  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                    url('/assets/static.gif');
+                "
+              >
+                <h3>Other Projects</h3>
+                <router-link to="/krokodeilos" style="color: darkgray">
+                  <img src="/assets/krokodeilosPlack.png" alt="Krokodeilos Menu" class="plack1-2" />
+                </router-link>
+                <router-link to="/sourikata" style="color: darkgray">
+                  <img src="/assets/sourikataPlack.png" alt="Krokodeilos Menu" class="plack1-2"
+                /></router-link>
+                <h4>Work in Progress</h4>
+                <div style="color: darkgray">
+                  <img
+                    src="/assets/ilcaTDKPlack.png"
+                    alt="Ilca Training Data Kit"
+                    class="plack1-2"
+                  />
+                </div>
               </li>
             </ul>
           </div>
@@ -138,22 +155,62 @@
 
     <!-- Section 4: Contact -->
     <section class="full-page-section contact-section">
-      <h1>Contact Us</h1>
-      <p>Drop by and say hello!</p>
-      <p>Reach out to us at +30 693 40 94 282 or hello@paradigms.gr!</p>
+      <form @submit.prevent="sendEmail">
+        <h1>Contact Me</h1>
+        <br />
+        <div>
+          <span>
+            <div>
+              <label for="name">Type your Name,</label>
+            </div>
+            <div>
+              <input type="text" id="name" v-model="form.name" required />
+            </div>
+            <div>
+              <label for="email">Type your e-mail so I can reach back,</label>
+            </div>
+            <div>
+              <input type="email" id="email" v-model="form.email" required />
+            </div>
+            <div>
+              <label for="message">And your message...</label>
+            </div>
+            <div>
+              <textarea id="message" v-model="form.message" required></textarea>
+            </div>
+            <button type="submit">Send</button>
+            <div>
+              <p v-if="statusMessage">{{ statusMessage }}</p>
+            </div>
+          </span>
+        </div>
+      </form>
     </section>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'ParadigmsHome',
   data() {
     return {
-      currentSlide: 0
+      currentSlide: 0,
+      form: {
+        name: '',
+        email: '',
+        message: ''
+      },
+      hideNavButtons: false,
+      statusMessage: ''
     }
   },
   methods: {
+    handleScroll() {
+      const scrollPosition = this.$refs.scrollSections.scrollTop
+      const threshold = window.innerHeight * 0.999
+      this.hideNavButtons = scrollPosition > threshold
+    },
     scrollToSection(index) {
       const sections = this.$refs.scrollSections.querySelectorAll('section')
       const target = sections[index]
@@ -173,7 +230,38 @@ export default {
       //const slides = this.$refs.scrollSections.querySelectorAll('.carousel-slide')
       const track = this.$refs.scrollSections.querySelector('.carousel-track')
       track.style.transform = `translateX(-${this.currentSlide * 100}%)`
+    },
+    sendEmail() {
+      const serviceID = 'service_paradigms'
+      const templateID = 'template_s7d6g87'
+
+      const templateParams = {
+        name: this.form.name,
+        email: this.form.email,
+        message: this.form.message
+      }
+      axios
+        .post('https://api.emailjs.com/api/v1.0/email/send', {
+          service_id: serviceID,
+          template_id: templateID,
+          user_id: '9eHYVI1GZpaY7SX0F',
+          template_params: templateParams
+        })
+        .then((response) => {
+          this.statusMessage = 'I will contact you shortly!'
+          this.form = { name: '', email: '', message: '' }
+        })
+        .catch((error) => {
+          this.statusMessage = 'Failed to send email. Please try again later.'
+          console.error('EmailJS Error:', error)
+        })
     }
+  },
+  mounted() {
+    this.$refs.scrollSections.addEventListener('scroll', this.handleScroll)
+  },
+  beforeUnmount() {
+    this.$refs.scrollSections.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
@@ -184,6 +272,19 @@ export default {
   overflow-y: auto;
   height: 100vh;
   scroll-behavior: smooth;
+  font-size: 18px;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.home::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+@media (max-width: 500px) {
+  .home {
+    font-size: 14px;
+  }
 }
 
 /* Full-page sections */
@@ -315,18 +416,17 @@ export default {
 }
 
 .about-section {
-  background-color: black;
+  background: rgba(0, 0, 0, 0.8);
   opacity: 1;
 }
 
 .projects-section {
-  background-color: rgb(53, 53, 53);
   opacity: 1;
 }
 
 .contact-section {
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
+  background: rgba(0, 0, 0, 0.8);
+
   width: 100%;
   justify-content: center;
 }
@@ -350,6 +450,16 @@ export default {
   animation-delay: 0.5s;
 }
 
+.plack1-1 {
+  max-width: 100px;
+  max-height: 100px;
+  margin-bottom: 20px;
+}
+.plack1-2 {
+  max-width: 200px;
+  max-height: 100px;
+}
+
 /* Navigation buttons on the first section */
 .nav-buttons {
   position: fixed;
@@ -360,7 +470,14 @@ export default {
   animation: fadeIn 1s ease-in forwards;
   animation-delay: 0.5s;
 }
-.nav-buttons button {
+
+.hidden {
+  display: none;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 0.5s;
+}
+
+button {
   margin-right: 10px;
   padding: 10px 20px;
   background-color: #fff;
@@ -430,7 +547,7 @@ export default {
 .carousel-slide {
   min-width: 100%;
   box-sizing: border-box;
-  padding: 50px;
+  padding: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -438,16 +555,18 @@ export default {
 }
 
 .carousel-control {
-  width: 20px;
-  height: 30px;
   position: absolute;
   top: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   border: none;
   color: white;
   font-size: 20px;
   cursor: pointer;
   z-index: 10;
+}
+
+.carousel-control:hover {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .carousel-control.prev {
@@ -468,5 +587,39 @@ ul {
   src: url('@/assets/bryndan-write.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+
+form div {
+  margin-bottom: 7px;
+}
+
+label {
+  border-radius: 0px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  padding: 12px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  resize: none;
+  font-family: 'Bryndan';
+}
+
+form button {
+  margin-right: 0px;
+}
+
+button:hover {
+  background-color: #ddd;
 }
 </style>
