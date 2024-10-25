@@ -138,13 +138,13 @@
                   <img src="/assets/sourikataPlack.png" alt="Krokodeilos Menu" class="plack1-2"
                 /></router-link>
                 <h4>Work in Progress</h4>
-                <div style="color: darkgray">
+                <router-link to="/ILCA-training-data-kit" style="color: darkgray">
                   <img
                     src="/assets/ilcaTDKPlack.png"
                     alt="Ilca Training Data Kit"
                     class="plack1-2"
                   />
-                </div>
+                </router-link>
               </li>
             </ul>
           </div>
