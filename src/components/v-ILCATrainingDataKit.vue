@@ -2,6 +2,17 @@
   <div class="container">
     <div id="map"></div>
     <div class="customization-form">
+      <h4>Select Training Data Set:</h4>
+      <div class="file-list">
+        <button
+          class="file-button"
+          v-for="file in csvFiles"
+          :key="file"
+          @click="loadFileData(file)"
+        >
+          {{ formatFileName(file) }}
+        </button>
+      </div>
       <h4>Customize Map:</h4>
       <div>
         Marker Color Range - Min speed (in Knots):
@@ -22,12 +33,6 @@
       </div>
       -->
       <button @click="updateMapSettings">Apply</button>
-      <h4>Select Training Data Set:</h4>
-    </div>
-    <div class="file-list">
-      <button class="file-button" v-for="file in csvFiles" :key="file" @click="loadFileData(file)">
-        {{ formatFileName(file) }}
-      </button>
     </div>
   </div>
 </template>
@@ -57,7 +62,7 @@ export default {
   },
   methods: {
     initMap() {
-      this.map = L.map('map').setView([37.93490324, 23.66120514], 16.5)
+      this.map = L.map('map').setView([37.93490324, 23.66420514], 16)
       L.tileLayer(
         'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
         {
@@ -217,13 +222,14 @@ export default {
   padding-top: 10px;
   padding-left: 10px;
   background-color: #f1f1f1;
+  padding-bottom: 10px;
 }
 
 .file-list {
   display: flex;
   overflow-x: scroll;
   white-space: nowrap;
-  padding: 0px 10px;
+
   background-color: #f1f1f1;
 }
 
@@ -237,7 +243,6 @@ button {
   margin-right: 10px;
   margin-top: 3px;
   margin-bottom: 3px;
-
   padding: 5px 10px;
   cursor: pointer;
 }
