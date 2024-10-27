@@ -51,7 +51,7 @@ export default {
       intervalId: null,
       csvFiles: [],
       minSpeed: 0, // New data property for min speed in Knots
-      maxSpeed: 4, // New data property for max speed in Knots
+      maxSpeed: 5, // New data property for max speed in Knots
       markerSize: 1, // Default marker size
       updateInterval: 1 // Default update interval
     }

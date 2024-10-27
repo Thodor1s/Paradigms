@@ -29,7 +29,7 @@
             onclick="window.location.href='https://www.linkedin.com/in/theobizbis/'"
             style="cursor: pointer"
             >Théodred</u
-          >, and I believe tech should make the real world a better place. I founded Paradigms to
+          >, and I believe tech should make the real world a better place. I created Paradigms to
           offer software engineering and consulting services on a pro-bono or volunteer basis to
           non-profits and ethical businesses. My mission? To create exemplary, impactful and ethical
           solutions for causes I believe in!
@@ -64,11 +64,11 @@
                   <h2>Dimension Factory</h2>
                   <br />
                   <p>
-                    Dimension Factory is a cutting-edge Tabletop RPG platform that puts the full
+                    Dimension Factory is a cutting-edge Tabletop RPG Platform that puts the full
                     list of digital tools for progression, game tracking, and storytelling at the
                     hands of small and independent Game Makers and Game Masters. DF is not a Virtual
-                    Tabletop. We've lovingly designed it as a tool that reinforces Tabletop
-                    experiences and does not detract from the in-person nature of the games we love.
+                    Tabletop. We've lovingly designed it as a tool that reinforces the in-person
+                    Tabletop RPG experience, and helps us
                   </p>
                   <br />
                   <span class="tooltip">
@@ -91,7 +91,7 @@
                     accounting, tax-consulting, employment, social security and pensions in Greece.
                     Users can ask questions and receive help from certified Fiduciaries, certified
                     Tax Consultants by the Economic Chamber of Greece, and certified public
-                    insurance and pension consultants by EFKA. Unlike other professionals, with BN
+                    insurance and pension consultants by EFKA. Unlike other professionals, BN
                     provides users with impartial guidance that prioritizes <u>their</u> interests.
                   </p>
                   <br />
@@ -116,7 +116,7 @@
                   <span class="tooltip">
                     Evimnos is an in-house project. The original Evimnos was built as a windows
                     application. I'm currently rebuilding it as a web platform and pitching it to
-                    cultural institutions with an early 2025 release.
+                    cultural institutions with a possible early 2025 release.
                     <br />
                     <br />
                     <button @click="scrollToSection(3)">I'm interested in evimnos!</button>
@@ -137,7 +137,6 @@
                 <router-link to="/sourikata" style="color: darkgray">
                   <img src="/assets/sourikataPlack.png" alt="Krokodeilos Menu" class="plack1-2"
                 /></router-link>
-                <h4>Work in Progress</h4>
                 <router-link to="/ILCA-training-data-kit" style="color: darkgray">
                   <img
                     src="/assets/ilcaTDKPlack.png"
